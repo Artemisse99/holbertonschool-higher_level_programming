@@ -2,16 +2,16 @@
 import random
 number = random.randint(-10000, 10000)
 
-if number <= 0:
-            mod = number % -10
-else:
-            mod = number % 10
+li = "Last digit of"
 
-line = "Last digit of"
-if mod != 0:
-        if mod > 5:
-                    print("{} {:d} is {:d} and is greater than 5".format( line, number, mod))
-        elif mod < 6:
-                    print("{} {:d} is {:d} and is less than 6 and not 0".format( line, number, mod))
+if number >= 0:
+            m = number % 10
 else:
-        print("{} {:d} is {:d} and is 0".format(line, number, mod))
+            m = number % -10
+
+if m > 5:
+    print("{} {:d} is {:d} and is greater than 5".format(li, number, m))
+if m == 0:
+    print("{} {:d} is {:d} and is 0".format(li, number, m))
+if m < 6 and m != 0:
+    print("{} {:d} is {:d} and is less than 6 and not 0".format(li, number, m))
