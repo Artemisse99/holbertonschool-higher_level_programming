@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-a = 122
-while a >= 97:
+a = 97
+while a <= 122:
      print("{:c}".format(a), end="")
-     a -= 1
+     a += 1
