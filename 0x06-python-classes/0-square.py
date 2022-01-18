@@ -2,6 +2,6 @@
 "Defines a class Square"
 
 
-class Square:
-        """omegalul empty"""
-            pass
+class Square():
+    """omegalul empty"""
+    pass
