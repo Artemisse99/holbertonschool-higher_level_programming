@@ -7,5 +7,5 @@ class Square():
 
    def __init__(self, size):
 
-       """Instantiation the square with size."""
-       self.__size = size
+   """Instantiation the square with size."""
+      self.__size = size
