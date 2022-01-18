@@ -5,7 +5,6 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
 
             if my_list[i] / 2 == 0:
-                print(my_list[i], end="")
                 once += 1
                 print("{:d}".format(my_list[i]), end="")
         except (ValueError, TypeError):
