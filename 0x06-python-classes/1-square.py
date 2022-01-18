@@ -3,9 +3,9 @@
 
 
 class Square():
-   """omegalul empty"""
 
+   """omegalul empty"""
    def __init__(self, size):
 
-   """Instantiation the square with size."""
+      """Instantiation the square with size."""
       self.__size = size
