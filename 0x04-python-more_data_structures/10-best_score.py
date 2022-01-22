@@ -4,6 +4,6 @@ def best_score(dic):
         max = list(dic.keys())[0]
         for key in dic:
             if dic[key] > dic[max]:
-               max = key
+                max = key
         return max
     return None
