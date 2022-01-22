@@ -30,7 +30,7 @@ def roman_to_int(roman_string):
                         encontro = 1
                     else:
                         suma += n_r[key]
-                 elif roman_string[i] == key:
+                elif roman_string[i] == key:
                         suma += n_r[key]
             return suma
     return 0
