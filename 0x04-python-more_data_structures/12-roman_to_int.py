@@ -10,7 +10,8 @@ def roman_to_int(roman_string):
                      continue
                  for key in n_r:
                      if roman_string[i] == key and i != len(roman_string) - 1:
-                        if roman_string[i] == 'I' and roman_string[i + 1] == 'V':                           suma += 4
+                        if roman_string[i] == 'I' and roman_string[i + 1] == 'V':
+                            suma += 4
                             encontro = 1
                         elif roman_string[i] == 'I' and roman_string[i + 1] == 'X':
                             suma += 9
