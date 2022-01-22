@@ -3,4 +3,4 @@ def uniq_add(my_list=[]):
     ret = 0
     for i in set(my_list):
         ret += i
-        return ret
+    return ret
