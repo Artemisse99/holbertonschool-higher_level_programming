@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Rectangle:
 
     """ Instantiation class Rectangle """
