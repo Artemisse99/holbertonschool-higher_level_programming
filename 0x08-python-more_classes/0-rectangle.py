@@ -4,4 +4,4 @@
 
 class Rectangle():
         """omegalul empty"""
-            pass
+        pass
