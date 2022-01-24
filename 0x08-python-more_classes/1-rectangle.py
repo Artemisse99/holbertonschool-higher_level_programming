@@ -1,11 +1,10 @@
-""" Class Rectangle """
 class Rectangle:
 
     """ Instantiation class Rectangle """
     def __init__(self, width=0, height=0):
 
         self.width = width
-        self.height= height
+        self.height = height
 
     """ to Make a value private """
     @property
