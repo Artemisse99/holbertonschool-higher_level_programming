@@ -25,30 +25,32 @@ class Rectangle:
         self.__width = value
 
         """ to Make a value private """
-        @property
-        def height(self):
-            return self.__height
+    @property
+    def height(self):
+        return self.__height
 
-        """ get value private """
-        @height.setter
-        def height(self, value):
-            if type(value) is not int:
-                raise TypeError("height must be an integer")
+    """ get value private """
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
 
-            if value < 0:
-                raise ValueError("height must be >= 0")
-            self.__height = value
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
-        def area(self):
+    """ get area """
+    def area(self):
             area = self.width * self.height
             return area
 
-        def perimeter(self):
+    """ get perimeter """
+    def perimeter(self):
 
-            if self.width == 0 | self.height == 0:
-                Perimeter = 0
-                return Perimeter
+        if self.width == 0 | self.height == 0:
+            Perimeter = 0
+            return Perimeter
 
-            else:
-                Perimeter = ((2 * self.width) + (2 * self.height))
-                return Perimeter
+        else:
+            Perimeter = ((2 * self.width) + (2 * self.height))
+            return Perimeter
