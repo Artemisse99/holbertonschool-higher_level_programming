@@ -9,7 +9,10 @@ class Rectangle:
 
         self.width = width
         self.height = height
-
+    def __del__(self):
+        """prints when omegalul is deleted"""
+        print("Bye rectangle...")
+        
     """ to Make a value private """
     @property
     def width(self):
