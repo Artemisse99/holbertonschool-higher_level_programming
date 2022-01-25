@@ -74,22 +74,22 @@ class Rectangle:
                                     for j in range(self.__height))
             return string
 
-    """ repr """
-    def __repr__(self):
+        """ repr """
+        def __repr__(self):
             return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """biggest omegalul based on area"""
-        if type(rect_1) is not Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_2.area() > rect_1.area():
-                    return rect_2
-        return rect_1
+        @staticmethod
+        def bigger_or_equal(rect_1, rect_2):
+            """biggest omegalul based on area"""
+            if type(rect_1) is not Rectangle:
+                raise TypeError("rect_1 must be an instance of Rectangle")
+            if type(rect_2) is not Rectangle:
+                raise TypeError("rect_2 must be an instance of Rectangle")
+            if rect_2.area() > rect_1.area():
+                return rect_2
+            return rect_1
 
-@classmethod
-def square(cls, size=0):
-        """instance square"""
-        return cls(size, size)
+        @classmethod
+        def square(cls, size=0):
+            """instance square"""
+            return cls(size, size)
