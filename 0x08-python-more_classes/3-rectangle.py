@@ -26,40 +26,40 @@ class Rectangle:
         self.__width = value
 
         """ to Make a value private """
-        @property
-        def height(self):
-            return self.__height
+    @property
+    def height(self):
+        return self.__height
 
-        """ get value private """
-        @height.setter
-        def height(self, value):
-            if type(value) is not int:
-                raise TypeError("height must be an integer")
+    """ get value private """
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
 
-            if value < 0:
-                raise ValueError("height must be >= 0")
-            self.__height = value
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
-            """ get area """
-            def area(self):
-                area = self.width * self.height
-                return area
+    """ get area """
+    def area(self):
+        area = self.width * self.height
+        return area
 
-            """ get perimeter """
-            def perimeter(self):
+    """ get perimeter """
+    def perimeter(self):
 
-                if self.width == 0 | self.height == 0:
-                    Perimeter = 0
-                    return Perimeter
+        if self.width == 0 | self.height == 0:
+            Perimeter = 0
+            return Perimeter
 
-                else:
-                    Perimeter = ((2 * self.width) + (2 * self.height))
-                    return Perimeter
+        else:
+            Perimeter = ((2 * self.width) + (2 * self.height))
+            return Perimeter
 
-            """ str # """
-            def __str__(self):
-                string = ""
-                if self.__width != 0 and self.__height != 0:
-                    string += "\n".join("#" * self.__width
-                                        for j in range(self.__height))
-                    return string
+    """ str # """
+    def __str__(self):
+        string = ""
+        if self.__width != 0 and self.__height != 0:
+            string += "\n".join("#" * self.__width
+                                for j in range(self.__height))
+            return string
