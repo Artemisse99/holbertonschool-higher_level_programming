@@ -6,6 +6,7 @@ class Rectangle:
 
         """ Instantiation class Rectangle """
         number_of_instances = 0
+
         def __init__(self, width=0, height=0):
 
                 self.width = width
@@ -55,7 +56,7 @@ class Rectangle:
         """ get perimeter """
         def perimeter(self):
 
-                if self.width == 0 | self.height == 0:
+                if self.width == 0 or self.height == 0:
                         Perimeter = 0
                         return Perimeter
 
@@ -74,4 +75,3 @@ class Rectangle:
         """ repr """
         def __repr__(self):
                 return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-        
