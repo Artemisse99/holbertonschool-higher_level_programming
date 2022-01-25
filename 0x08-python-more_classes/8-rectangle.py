@@ -68,11 +68,11 @@ class Rectangle:
 
         """ str # """
         def __str__(self):
-                string = ""
-                if self.__width != 0 and self.__height != 0:
-                   string += "\n".join(str(self.print_symbol) * self.__width
-                                       for j in range(self.__height))
-                return string
+            string = ""
+            if self.__width != 0 and self.__height != 0:
+                string += "\n".join(str(self.print_symbol) * self.__width
+                                    for j in range(self.__height))
+            return string
 
         """ repr """
         def __repr__(self):
@@ -80,11 +80,11 @@ class Rectangle:
 
         @staticmethod
         def bigger_or_equal(rect_1, rect_2):
-                """biggest omegalul based on area"""
-                if type(rect_1) is not Rectangle:
-                  raise TypeError("rect_1 must be an instance of Rectangle")
-                if type(rect_2) is not Rectangle:
-                  raise TypeError("rect_2 must be an instance of Rectangle")
-                if rect_2.area() > rect_1.area():
+            """biggest omegalul based on area"""
+            if type(rect_1) is not Rectangle:
+                raise TypeError("rect_1 must be an instance of Rectangle")
+            if type(rect_2) is not Rectangle:
+                raise TypeError("rect_2 must be an instance of Rectangle")
+            if rect_2.area() > rect_1.area():
                         return rect_2
-                return rect_1
+            return rect_1
