@@ -1,0 +1,128 @@
+Doctest to check the ``5-text_indentation`` module
+======================
+
+Importing:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+	 >>> m = __import__("5-text_indentation").__doc__
+	      >>> len(m) > 1
+	      	   True
+
+		    >>> f = __import__("5-text_indentation").text_indentation.__doc__
+		             >>> len(f) > 1
+			              True
+
+				       >>> text_indentation()
+				       	    Traceback (most recent call last):
+					    	       ...
+							 TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+							  >>> text_indentation("Hello", "Hi")
+							       Traceback (most recent call last):
+							       		  ...
+										 TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+										  >>> text_indentation(None)
+										       Traceback (most recent call last):
+										       		  ...
+													 TypeError: text must be a string
+
+													  >>> text_indentation(1)
+													           Traceback (most recent call last):
+														            ...
+															             TypeError: text must be a string
+
+																      >>> text_indentation("""Sal dia ma que yo muero por vos. y si no estas aqui me falta tu calor. sabes que mi corazon muere por verte? princesa entre mis brazos yo quiero tenerte: Sabes que mi amor muero por vos. y si no estas aqui me falta tu calor: sabes que mi corazon muere por verte? princesa entre mis brazos yo quiero tenerte. Mi amor yo quiero estar con vos? yo quiero estar con vos. Sabes que mi amor por ti no cambiara. princesa de mi vida por siempre seras. y no hay otra que pueda ocupar tu lugar. Todo lo qe vivimos no lo olvidare.""")
+																      	   Sal dia ma que yo muero por vos.
+																	        <BLANKLINE>
+																			 y si no estas aqui me falta tu calor.
+																			    <BLANKLINE>
+																				 sabes que mi corazon muere por verte?
+																				        <BLANKLINE>
+																						 princesa entre mis brazos yo quiero tenerte:
+																						 	   <BLANKLINE>
+																								 Sabes que mi amor muero por vos.
+																								        <BLANKLINE>
+																										 y si no estas aqui me falta tu calor:
+																										    <BLANKLINE>
+																											 sabes que mi corazon muere por verte?
+																											        <BLANKLINE>
+																													 princesa entre mis brazos yo quiero tenerte.
+																													 	   <BLANKLINE>
+																															 Mi amor yo quiero estar con vos?
+																															     <BLANKLINE>
+																																 yo quiero estar con vos.
+																																     <BLANKLINE>
+																																	 Sabes que mi amor por ti no cambiara.
+																																	        <BLANKLINE>
+																																			 princesa de mi vida por siempre seras.
+																																			 	   <BLANKLINE>
+																																					 y no hay otra que pueda ocupar tu lugar.
+																																					    <BLANKLINE>
+																																						 Todo lo qe vivimos no lo olvidare.
+																																						       <BLANKLINE>
+
+         >>> text_indentation("""Ella tiene 16 y va a colegio privado. Viste ropa elegante y lleva su pelo atado? Lleva una hermosa sonrisa, una joven mirada? Unos labios rojisos, y su piel es rosada: Su pelo lleva el perfume, que lleva su piel. Lleva aroma de niña, mezclada con mujer: Su nombre es adecuado a su forma de hablar? A su carácter callado y a su sensualidad. Ella es la chica perfecta, que te puede encontrar. Con un par de palabritas, te puedes enamorar. Ella vive su vida en Montevideo, Uruguay. Estudiando una carrera pa' no tener que viajar. Yo tengo 19 y ando por ahí. Buscandome la vida pa' poder seguir""")
+	          Ella tiene 16 y va a colegio privado.
+		           <BLANKLINE>
+			            Viste ropa elegante y lleva su pelo atado?
+				             <BLANKLINE>
+					              Lleva una hermosa sonrisa, una joven mirada?
+						               <BLANKLINE>
+							                Unos labios rojisos, y su piel es rosada:
+									         <BLANKLINE>
+										          Su pelo lleva el perfume, que lleva su piel.
+											           <BLANKLINE>
+												            Lleva aroma de niña, mezclada con mujer:
+													             <BLANKLINE>
+														              Su nombre es adecuado a su forma de hablar?
+															               <BLANKLINE>
+																                A su carácter callado y a su sensualidad.
+																		         <BLANKLINE>
+																			          Ella es la chica perfecta, que te puede encontrar.
+																				           <BLANKLINE>
+																					            Con un par de palabritas, te puedes enamorar.
+																						             <BLANKLINE>
+																							              Ella vive su vida en Montevideo, Uruguay.
+																								               <BLANKLINE>
+																									                Estudiando una carrera pa' no tener que viajar.
+																											         <BLANKLINE>
+																												          Yo tengo 19 y ando por ahí.
+																													           <BLANKLINE>
+																														            Buscandome la vida pa' poder seguir
+
+																															     >>> text_indentation("   Hello.  How are you?   ")
+																															     	  Hello.
+																																	 <BLANKLINE>
+																																		 How are you?
+																																		      <BLANKLINE>
+
+																																		       >>> text_indentation(" . ? : ")
+																																		       	    .
+																																				 <BLANKLINE>
+																																					 ?
+																																						 <BLANKLINE>
+																																							 :
+																																								 <BLANKLINE>
+
+																																								  >>> text_indentation("Hello")
+																																								       Hello
+
+																																								        >>> text_indentation(" \n Hello. Whatcha up to?")
+																																									     <BLANKLINE>
+																																										  Hello.
+																																											 <BLANKLINE>
+																																												 Whatcha up to?
+																																												 	  <BLANKLINE>
+
+																																													   >>> text_indentation("Hello \n . How are you?")
+																																													        Hello
+																																															  .
+																																																 <BLANKLINE>
+																																																	 How are you?
+																																																	      <BLANKLINE>
+
+																																																	       >>> text_indentation("Hello, how are you?\n")
+																																																	       	    Hello, how are you?
+																																																		    	    <BLANKLINE>
+																																																				 <BLANKLINE>

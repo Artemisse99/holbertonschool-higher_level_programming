@@ -1,0 +1,27 @@
+Doctest to check the ``0-add_integer`` module
+======================
+
+Importing:
+>>> add_integer = __import__("0-add_integer").add_integer
+
+>>> m = __import__("0-add_integer").__doc__
+>>> len(m) > 1
+True
+
+>>> f = __import__("0-add_integer").add_integer.__doc__
+>>> len(f) > 1
+True
+
+>>> add_integer(8, 3)
+11
+
+>>> add_integer(7, -4)
+3
+
+>>> add_integer(-1, 8)
+7
+
+>>> [add_integer(i, i ** 2) for i in range(6)]
+[0, 2, 6, 12, 20, 30]
+
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
