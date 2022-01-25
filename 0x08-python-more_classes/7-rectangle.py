@@ -58,7 +58,7 @@ class Rectangle:
         """ get perimeter """
         def perimeter(self):
 
-                if self.width == 0 | self.height == 0:
+                if self.width == 0 or self.height == 0:
                         Perimeter = 0
                         return Perimeter
 
@@ -70,11 +70,10 @@ class Rectangle:
         def __str__(self):
                 string = ""
                 if self.__width != 0 and self.__height != 0:
-                        string += "\n".join(str(self.print_symbol) * self.__width
-                                            for j in range(self.__height))
-                        return string
+                    string += "\n".join(str(self.print_symbol) * self.__width
+                                        for j in range(self.__height))
+                return string
 
         """ repr """
         def __repr__(self):
-                return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-        
+            return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
