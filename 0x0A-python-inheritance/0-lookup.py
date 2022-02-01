@@ -1,7 +1,14 @@
 #!/usr/bin/python3
-""" Function Lookup """
+"""
+lookup: Function thar returns the list.
+    Args:
+    obj: object.
+"""
 
 
 def lookup(obj):
-""" lookup """
+"""lookup
+        Args:
+        obj: Object.
+"""
     return dir(obj)
