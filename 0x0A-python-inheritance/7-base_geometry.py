@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Cass definition"""
+"""class BaseGeometry"""
 
 
 class BaseGeometry:
-        """improve geometry"""
+        """omegalul empty"""
         def area(self):
-            """Area"""
-            raise Exception("area() is not implemented")
+                """omegalul empty"""
+                raise Exception("area() is not implemented")
 
         def integer_validator(self, name, value):
-            """ function"""
-            if type(value) is not int:
-                raise TypeError("{} must be an integer".format(name))
-            if value <= 0:
-                raise ValueError("{} must be greater than 0".format(name))
+                """omegalul empty"""
+                if type(value) is not int:
+                        raise TypeError("{:s} must be an integer".format(name))
+                if value <= 0:
+                        raise ValueError("{:s} must be greater than 0".format(name))
