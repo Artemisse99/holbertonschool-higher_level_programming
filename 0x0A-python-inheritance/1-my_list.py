@@ -8,7 +8,7 @@ class
 
 class MyList(list):
     """ 
-    Class My class 
+    class My class 
     """
 
     def print_sorted(self):
