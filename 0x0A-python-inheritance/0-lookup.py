@@ -7,8 +7,8 @@ lookup: Function thar returns the list.
 
 
 def lookup(obj):
-"""lookup
-        Args:
-        obj: Object.
-"""
+    """lookup
+    Args:
+    obj: Object.
+    """
     return dir(obj)
