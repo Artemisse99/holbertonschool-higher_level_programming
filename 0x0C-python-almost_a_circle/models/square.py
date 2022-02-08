@@ -9,24 +9,23 @@ class Square(Rectangle):
         """ Construct SubClass Square"""
         super().__init__(id, x, y, size, size)
         self.size = size
-        
-        
+
     @property
     def size(self):
         """Base class"""
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """Base class"""
         self.width = value
         self.height = value
-        
+
     def __str__(self):
         """Base class"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
                                                          self.y, self.width)
-    
+
     def update(self, *args, **kwargs):
         """Base class"""
         if len(args):
