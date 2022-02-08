@@ -20,7 +20,7 @@ class Rectangle(Base):
     def width(self):
         """Base class"""
         return self.__width
-        
+
     @property
     def height(self):
         """Base class"""
@@ -36,7 +36,6 @@ class Rectangle(Base):
         """Base class"""
         return self.__y
 
-
     """ get value private """
     @width.setter
     def width(self, value):
@@ -46,7 +45,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
 
     """ get value private """
     @height.setter
@@ -73,11 +71,11 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
-        self.__y = value   
+        self.__y = value
 
     def area(self):
         return (self.__width * self.__height)
-    
+
     def display(self):
         print(("\n" * self.__y) + "\n".join(((" " * self.__x) +
                                              ("#" * self.__width))
@@ -117,7 +115,6 @@ class Rectangle(Base):
             if "y" in kwargs:
                 self.y = kwargs["y"]
 
-    
     def to_dictionary(self):
         """Base class"""
         d = {}
