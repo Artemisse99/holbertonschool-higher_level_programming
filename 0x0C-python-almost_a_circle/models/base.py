@@ -121,3 +121,31 @@ class Base:
     @classmethod
     def reset(cls):
         cls.__nb_objects = 0
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Initialize sdnads alksdn al"""
+        with open(cls.__name__ + ".csv", "w", newline='') as f:
+            if cls.__name__ == "Rectangle":
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == "Square":
+                fieldnames = ['id', 'size', 'x', 'y']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            if list_objs is not None:
+                for model in list_objs:
+                    writer.writerow(model.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Initialize sdnads alksdn al"""
+        if path.exists(cls.__name__ + ".csv") is False:
+            return []
+        with open(cls.__name__ + ".csv", "r", newline='') as f:
+            listofinstances = []
+            reader = csv.DictReader(f)
+            for row in reader:
+                for key, value in row.items():
+                    row[key] = int(value)
+                listofinstances.append(cls.create(**row))
+        return listofinstances
