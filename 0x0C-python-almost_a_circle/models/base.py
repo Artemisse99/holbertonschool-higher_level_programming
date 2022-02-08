@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """created class"""
 import csv
@@ -80,8 +79,8 @@ class Base:
                 for i in tmp_three:
                     tmp_file += [cls.create(**i)]
                 return tmp_file
-        except:
-            return []
+
+        return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
