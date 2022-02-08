@@ -79,8 +79,8 @@ class Base:
                 for i in tmp_three:
                     tmp_file += [cls.create(**i)]
                 return tmp_file
-
-        return []
+        except e:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
