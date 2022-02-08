@@ -1,58 +1,65 @@
 #!/usr/bin/python3
-""" SubClass Square"""
+"""created class Square that inherits that Rectangle"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """class Square that inherits rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Construct SubClass Square"""
-        super().__init__(id, x, y, size, size)
+        """class constructor"""
+
         self.size = size
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """Base class"""
+        """getter and setter public,
+        its width and height have the same values"""
+
         return self.width
 
     @size.setter
     def size(self, value):
-        """Base class"""
-        self.width = value
-        self.height = value
+        """validations"""
 
-    def __str__(self):
-        """Base class"""
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
-                                                         self.y, self.width)
+        self.width = value
+
+    def __str__(self, **kwargs):
+        """overloading"""
+
+        return ("[Square] ({}) {}/{} - {}".format
+                (self.id, self.x, self.y, self.size))
 
     def update(self, *args, **kwargs):
-        """Base class"""
+        """adding method public"""
         if len(args):
-            for i, a in enumerate(args):
-                if i == 0:
-                    self.id = a
-                elif i == 1:
-                    self.size = a
-                elif i == 2:
-                    self.x = a
-                elif i == 3:
-                    self.y = a
+            """args non-kwargs"""
+            for iter_arg, arg in enumerate(args):
+                if iter_arg == 0:
+                    self.id = arg
+                elif iter_arg == 1:
+                    self.size = arg
+                elif iter_arg == 2:
+                    self.x = arg
+                elif iter_arg == 3:
+                    self.y = arg
         else:
-            if "id" in kwargs:
-                self.id = kwargs["id"]
-            if "size" in kwargs:
-                self.size = kwargs["size"]
-            if "x" in kwargs:
-                self.x = kwargs["x"]
-            if "y" in kwargs:
-                self.y = kwargs["y"]
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     def to_dictionary(self):
-        """Base class"""
-        d = {}
-        d["id"] = self.id
-        d["size"] = self.size
-        d["x"] = self.x
-        d["y"] = self.y
-        return d
+        """by adding the public method, that returns the dictionary"""
+
+        vars = ['id', 'size', 'x', 'y']
+        dict = {}
+        for i in range(len(vars)):
+            dict.update({vars[i]: getattr(self, vars[i])})
+        return dict
