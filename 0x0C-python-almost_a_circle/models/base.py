@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Class Base """
 import json
-from os import path 
+from os import path
 
 
 class Base:
@@ -17,11 +17,10 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-                                                                           
     @staticmethod
     def to_json_string(list_dictionaries):
         """Using file"""
-        if list_dictionaries == None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) is 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -44,7 +43,7 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
-                                            
+
     @classmethod
     def create(cls, **dictionary):
         """Using file"""
@@ -72,3 +71,7 @@ class Base:
                     objectdict[key] = value
                     listofinstances.append(cls.create(**objectdict))
             return listofinstances
+
+    @classmethod
+    def reset(cls):
+        cls.__nb_objects = 0
