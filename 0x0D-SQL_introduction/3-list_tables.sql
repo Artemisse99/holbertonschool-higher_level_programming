@@ -1,2 +1,2 @@
 -- Display full table 
-SHOW FULL TABLES;
+SHOW TABLES;
