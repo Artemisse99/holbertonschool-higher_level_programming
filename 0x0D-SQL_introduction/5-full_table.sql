@@ -1,2 +1,2 @@
 -- Create Table
-CREATE TABLE first_table;
+CREATE TABLE IF NOT EXISTS first_table;
