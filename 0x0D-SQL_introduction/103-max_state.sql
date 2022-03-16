@@ -1,3 +1,4 @@
+-- 0x0D-SQL_introduction
 SELECT state, MAX(value) as max_temp
 FROM temperatures
 GROUP BY state

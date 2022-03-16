@@ -1,3 +1,4 @@
+-- 0x0D-SQL_introduction
 SELECT city, AVG(value) as avg_temp
 FROM temperatures
 WHERE month BETWEEN 7 AND 8
