@@ -1,2 +1,2 @@
 --Display all Databases in the MySQL Server
-SHOW DATABASE;   
+SHOW IF EXISTS DATABASES;   
