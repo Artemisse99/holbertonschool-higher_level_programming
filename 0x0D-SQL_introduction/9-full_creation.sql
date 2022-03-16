@@ -1,4 +1,4 @@
---0x0D-SQL_introduction
+-- 0x0D-SQL_introduction
 CREATE TABLE IF NOT EXISTS second_table(
 id INT,
 name VARCHAR(256),

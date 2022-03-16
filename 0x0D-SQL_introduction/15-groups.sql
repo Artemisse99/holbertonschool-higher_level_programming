@@ -1,4 +1,4 @@
---0x0D-SQL_introduction
+-- 0x0D-SQL_introduction
 SELECT score, COUNT(*) 
 AS number 
 FROM second_table 

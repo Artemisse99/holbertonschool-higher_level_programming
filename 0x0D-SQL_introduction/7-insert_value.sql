@@ -1,3 +1,3 @@
---0x0D-SQL_introduction
+-- 0x0D-SQL_introduction
 INSERT INTO first_table(id, name)
 VALUES (89, 'Best School');

@@ -1,2 +1,2 @@
---Drop Databases in the MySQL Server
-DROP DATABASE hbtn_0c_0;
+-- Drop Databases in the MySQL Server
+DROP DATABASE IF EXISTS hbtn_0c_0;
