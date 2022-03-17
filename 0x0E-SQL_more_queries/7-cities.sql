@@ -1,0 +1,7 @@
+-- 3 first students in the Batch ID=3
+-- because Batch 3 is the best!
+CREATE TABLE IF NOT EXISTS cities(
+id INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
+state_id INT NOT NULL FOREIGN KEY,
+name VARCHAR(256) NOT NULL    
+);
