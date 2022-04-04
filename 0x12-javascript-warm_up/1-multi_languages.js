@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let Fline = "C is fun";
-let Sline = "Python is cool";
-let Tline = "JavaScript is amazing";
+const Fline = 'C is fun';
+const Sline = 'Python is cool';
+const Tline = 'JavaScript is amazing';
 console.log(Fline);
 console.log(Sline);
 console.log(Tline);
