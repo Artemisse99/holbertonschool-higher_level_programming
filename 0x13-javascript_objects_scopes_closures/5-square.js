@@ -1,17 +1,18 @@
 #!/usr/bin/node
 class Rectangle {
-  constructor (h, w) {
-    if (h > 0 && w > 0) {
-      this.height = h;
+  constructor (w, h) {
+    if (w > 0 && h > 0) {
       this.width = w;
+      this.height = h;
+      
     } else {
-      return Rectangle.removeClass;
+      return undefined;
     }
   }
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.height));
+      console.log('X'.repeat(this.width));
     }
   }
 
