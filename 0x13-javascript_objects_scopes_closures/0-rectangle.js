@@ -1,2 +1,2 @@
 #!/usr/bin/node
-module.exports = class Reactangle{};
+module.exports = class Reactangle {};
