@@ -5,7 +5,7 @@ class Rectangle {
       this.width = w;
       this.height = h;
     } else {
-        return undefined;
+      return undefined;
     }
   }
 
@@ -14,5 +14,5 @@ class Rectangle {
       console.log('x'.repeat(this.weight));
     }
   }
-};
+}
 module.exports = Rectangle;
