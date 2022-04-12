@@ -12,9 +12,6 @@ request(url, function (error, response, body) {
     newlist.forEach(element => {
       if (element.includes('18')) { match = element; }
     });
-    request(match, function (error, response, body) {
-      console.log((JSON.parse(body).films).length);
-    }
-    );
+    console.log((JSON.parse(body).films).length);
   }
 });
