@@ -2,16 +2,18 @@
 const request = require('request');
 const args = process.argv;
 const url = args[2];
+let count = 0;
 request(url, function (error, response, body) {
-  if (error) {
+  if (response.statusCode !== 200) {
     console.log(error);
   } else {
-    let newlist = [];
-    let match = '';
-    newlist = Object.values(JSON.parse(body).results['0'].characters);
-    newlist.forEach(element => {
-      if (element.includes('18')) { match = element; }
-    });
-    console.log((JSON.parse(body).films).length);
+    for (const values in JSON.parse(body).results) {
+      JSON.parse(body).results[values].characters.forEach(element => {
+        if (element.includes('18')) {
+          count++;
+        }
+      });
+    }
+    console.log(count);
   }
 });
