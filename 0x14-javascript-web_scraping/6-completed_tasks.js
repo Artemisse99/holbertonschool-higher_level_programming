@@ -8,15 +8,15 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const js = JSON.parse(body);
-    const dicto = {};
+    const dic = {};
     for (const i of js) {
       if (i.completed === true) {
-        if (dicto[i.userId] === undefined) {
-          dicto[i.userId] = 0;
+        if (dic[i.userId] === undefined) {
+          dic[i.userId] = 0;
         }
-        dicto[i.userId] += 1;
+        dic[i.userId] += 1;
       }
     }
-    console.log(dicto);
+    console.log(dic);
   }
 });
