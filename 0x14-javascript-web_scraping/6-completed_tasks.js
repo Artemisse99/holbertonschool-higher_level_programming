@@ -1,25 +1,22 @@
 #!/usr/bin/node
 const request = require('request');
-const args = process.argv;
+const fargs = process.argv;
+const url = fargs[2];
 
-const url = args[2];
 request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    const dict = JSON.parse(body);
-    const findtrue = dict.filter(function (diction) {
-      return diction.completed === true;
-    });
-    const users = [];
-    for (const key in findtrue) {
-      users.push(findtrue[key].userId);
+    const js = JSON.parse(body);
+    const dicto = {};
+    for (const i of js) {
+      if (i.completed === true) {
+        if (dicto[i.userId] === undefined) {
+          dicto[i.userId] = 0;
+        }
+        dicto[i.userId] += 1;
+      }
     }
-    const result = { };
-    for (let i = 0; i < users.length; ++i) {
-      if (!result[users[i]]) { result[users[i]] = 0; }
-      ++result[users[i]];
-    }
-    console.log(result);
+    console.log(dicto);
   }
 });
