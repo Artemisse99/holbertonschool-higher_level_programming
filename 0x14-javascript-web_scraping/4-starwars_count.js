@@ -1,19 +1,19 @@
 #!/usr/bin/node
 const request = require('request');
-const args = process.argv;
-const url = args[2];
-let count = 0;
-request(url, function (error, response, body) {
-  if (response.statusCode !== 200) {
+const fargs = process.argv;
+request(fargs[2], function (error, response, body) {
+  if (error) {
     console.log(error);
-  } else {
-    for (const values in JSON.parse(body).results) {
-      JSON.parse(body).results[values].characters.forEach(element => {
-        if (element.includes('18')) {
-          count++;
-        }
-      });
-    }
-    console.log(count);
   }
+  let count = 0;
+  const js = JSON.parse(body).results;
+  for (let i = 0; i < js.length; i++) {
+    const character = js[i].characters.find((js) => {
+      return (js.match(/18/));
+    });
+    if (character !== undefined) {
+      count++;
+    }
+  }
+  console.log(count);
 });
