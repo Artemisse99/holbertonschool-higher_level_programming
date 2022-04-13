@@ -2,17 +2,18 @@
 const request = require('request');
 const args = process.argv;
 const url = args[2];
+let count = 0;
 request(url, function (error, response, body) {
-  if (error) {
+  if (response.statusCode !== 200) {
     console.log(error);
   } else {
-    const obj = JSON.parse(body);
-    const dictionary = {};
-    for (const keys in obj) {
-      if (obj[keys].completed === true) {
-        dictionary[obj[keys].userId] = dictionary[obj[keys].userId] + 1 || 1;
-      }
+    for (const values in JSON.parse(body).results) {
+      JSON.parse(body).results[values].characters.forEach(element => {
+        if (element.includes('18')) {
+          count++;
+        }
+      });
     }
-    console.log(dictionary);
+    console.log(count);
   }
 });
