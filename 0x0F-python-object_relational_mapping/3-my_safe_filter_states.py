@@ -10,9 +10,10 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3])
     state = data.cursor()
     state.execute("SELECT * FROM states WHERE name=%s \
-    ORDER BY id ASC", (argv[4],))
+        ORDER BY states.id ASC", (argv[4],))
     query_rows = state.fetchall()
     for row in query_rows:
         print(row)
+        
     state.close()
     data.close()
