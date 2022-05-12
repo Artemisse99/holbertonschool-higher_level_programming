@@ -15,8 +15,8 @@ if __name__ == "__main__":
                            db=sys.argv[3])
 
     state = data.cursor()
-    state.execute("SELECT * FROM states WHERE name=%s \
-        ORDER BY states.id ASC", (argv[4],))
+    state.execute("SELECT * FROM states WHERE name=%s ORDER BY \
+                   states.id ASC", (argv[4],))
 
     query_rows = state.fetchall()
     for row in query_rows:
