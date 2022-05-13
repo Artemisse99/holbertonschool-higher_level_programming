@@ -16,9 +16,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-
-    for state in session.query(State).filter(State.name.like('%a%')):
-        session.delete(state)
-
+    state = session.query(State).filter_by(id=2).first()
+    state.name = "New Mexico"
     session.commit()
     session.close()
