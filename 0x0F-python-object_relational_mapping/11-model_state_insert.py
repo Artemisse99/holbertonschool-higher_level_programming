@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    state = session.query(State).filter_by(id=6).first()
-    state.name = "Louisiana"
+    state = session.query(State).filter_by(name='Louisiana').first()
     session.commit()
+    print(str(state.id))
     session.close()
